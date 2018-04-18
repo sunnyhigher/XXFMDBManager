@@ -13,6 +13,7 @@
 		1108B7502086E26A0068C5CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1108B74F2086E26A0068C5CC /* Assets.xcassets */; };
 		1108B7532086E26A0068C5CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1108B7512086E26A0068C5CC /* LaunchScreen.storyboard */; };
 		1108B7562086E26A0068C5CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1108B7552086E26A0068C5CC /* main.m */; };
+		A1D7557D9E53FCBFF20A77C0 /* libPods-XXFMDBManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D47ADEB7F991E33DE222A9F /* libPods-XXFMDBManager.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		1108B7522086E26A0068C5CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1108B7542086E26A0068C5CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1108B7552086E26A0068C5CC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3D47ADEB7F991E33DE222A9F /* libPods-XXFMDBManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XXFMDBManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		816310DFC240D0A8E8B29FAD /* Pods-XXFMDBManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XXFMDBManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-XXFMDBManager/Pods-XXFMDBManager.release.xcconfig"; sourceTree = "<group>"; };
+		AA25E0B4295E20ABF2E7D660 /* Pods-XXFMDBManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XXFMDBManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XXFMDBManager/Pods-XXFMDBManager.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D7557D9E53FCBFF20A77C0 /* libPods-XXFMDBManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				1108B7452086E2690068C5CC /* XXFMDBManager */,
 				1108B7442086E2690068C5CC /* Products */,
+				234C46DE970E5FE2C486A13A /* Pods */,
+				A93FB31BC38E9EEEE552ECEC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +78,23 @@
 			path = XXFMDBManager;
 			sourceTree = "<group>";
 		};
+		234C46DE970E5FE2C486A13A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA25E0B4295E20ABF2E7D660 /* Pods-XXFMDBManager.debug.xcconfig */,
+				816310DFC240D0A8E8B29FAD /* Pods-XXFMDBManager.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A93FB31BC38E9EEEE552ECEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D47ADEB7F991E33DE222A9F /* libPods-XXFMDBManager.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,6 +102,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1108B7592086E26A0068C5CC /* Build configuration list for PBXNativeTarget "XXFMDBManager" */;
 			buildPhases = (
+				7B310035868A3D92BEDEBFC0 /* [CP] Check Pods Manifest.lock */,
 				1108B73F2086E2690068C5CC /* Sources */,
 				1108B7402086E2690068C5CC /* Frameworks */,
 				1108B7412086E2690068C5CC /* Resources */,
@@ -135,6 +160,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7B310035868A3D92BEDEBFC0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XXFMDBManager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1108B73F2086E2690068C5CC /* Sources */ = {
@@ -281,15 +327,13 @@
 		};
 		1108B75A2086E26A0068C5CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA25E0B4295E20ABF2E7D660 /* Pods-XXFMDBManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5FM63V954T;
 				INFOPLIST_FILE = XXFMDBManager/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ruixinduan.XXFMDBManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -298,15 +342,13 @@
 		};
 		1108B75B2086E26A0068C5CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 816310DFC240D0A8E8B29FAD /* Pods-XXFMDBManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5FM63V954T;
 				INFOPLIST_FILE = XXFMDBManager/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ruixinduan.XXFMDBManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
